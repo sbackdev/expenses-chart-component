@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Expenses chart component</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,700;1,200;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+  <div id="app" class="main-container">
+    <div class="balance-container content-width">
+      <div>
+        <p class="balance-text">My balance</p>
+        <p class="balance-value">$921.48</p>
+      </div>
+      <img class="logo" src="images/logo.svg" alt="">
+    </div>
+    <div class="chart-container content-width">
+      <h1>Spending - Last 7 days</h1>
+      <div class="chart">
+        <div v-for="(spent, index) in spending" class="bar-container">
+          <span class="spent">${{ spent.amount }}</span>
+          <div class="bar" :class="{ selected: spent.day == 'wed' }" :style="{height: (spent.amount * 2) + 'px'}">
+          </div>
+          <p>{{ spent.day }}</p>
+        </div>
+      </div>
+      <div class="chart-footer-container">
+        <div>
+          <p class="footer-text">Total this month</p>
+          <p class="footer-text-total">$478.33</p>
+        </div>
+        <div class="footer-left-container">
+          <p class="footer-text-percentage">+2.4%</p>
+          <p class="footer-text">from last month</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/app.js"></script>
+</body>
+</html>

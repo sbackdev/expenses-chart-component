@@ -1,0 +1,156 @@
+:root {
+    --softred: hsl(10, 79%, 65%);
+    --cyan: hsl(186, 34%, 60%);
+    --darkbrown: hsl(25, 47%, 15%);
+    --mediumbrown: hsl(28, 10%, 53%);
+    --cream: hsl(27, 66%, 92%);
+    --paleorangne: hsl(33, 100%, 98%);
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    background-color: var(--cream);
+}
+
+.logo {
+    width: 50px;
+}
+
+p {
+    padding: 3px 5px;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    margin-top: 50px;
+}
+
+.content-width {
+    width: 25%;
+    min-width: 300px;
+    max-width: 360px;
+}
+
+.balance-container {
+    background-color: var(--softred);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+}
+
+.balance-text {
+    color: var(--cream);
+    font-size: 0.65rem;
+    margin-bottom: 10px;
+}
+
+.balance-value {
+    color: white;
+    font-weight: bold;
+}
+
+.chart-container {
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 15px;
+    padding: 10px 20px;
+}
+
+.chart-container h1 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.chart-footer-container {
+    border-top: 2px solid var(--cream);
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 10px 0;
+}
+
+.footer-text {
+    font-size: 0.75rem;
+    color: var(--mediumbrown);
+}
+
+.footer-text-total {
+    font-weight: bold;
+    font-size: 1.9rem;
+}
+
+.footer-text-percentage {
+    font-weight: bold;
+    font-size: 0.75rem;
+}
+
+.footer-left-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.chart {
+    height: 190px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.bar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70px;
+    cursor: pointer;
+}
+
+.bar {
+    background-color: var(--softred);
+    border-radius: 3px;
+    width: 40px;
+}
+
+.bar-container:hover .bar {
+    opacity: 0.5;
+}
+
+.bar-container:hover .spent{
+    display: initial;
+}
+
+.selected {
+    background-color: var(--cyan);
+}
+
+.bar-container p {
+    margin-top: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    font-size: 0.7rem;
+    color: var(--mediumbrown);
+}
+
+.spent {
+    background-color: var(--darkbrown);
+    color: var(--paleorangne);
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    padding: 8px 5px;
+    display: none;
+}
+
+@media screen and (max-width: 376px) {
+    .content-width {
+        width: 80%;
+    }
+}
